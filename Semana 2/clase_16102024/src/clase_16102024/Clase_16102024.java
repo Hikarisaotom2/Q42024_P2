@@ -38,8 +38,8 @@ public class Clase_16102024 {
         /* CRUD 
         1) docentes
             1 crear 
-            2 modifiar 
-            3 mostrar 
+            2 modifiar  -> 
+            3 mostrar  -> recursion
             4 eliminar 
         2) alumnos 
             1 crear 
@@ -51,7 +51,6 @@ public class Clase_16102024 {
             2 modifiar 
             3 mostrar 
             4 eliminar 
-        
         */
     }
     
