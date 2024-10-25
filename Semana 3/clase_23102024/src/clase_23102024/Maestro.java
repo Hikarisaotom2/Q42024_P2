@@ -25,5 +25,13 @@ public class Maestro extends Usuario{
         }
 
     }
+
+    public int getCantidadClases() {
+        return cantidadClases;
+    }
+
+    public void setCantidadClases(int cantidadClases) {
+        this.cantidadClases = cantidadClases;
+    }
     
 }

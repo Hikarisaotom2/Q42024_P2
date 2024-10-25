@@ -15,10 +15,18 @@ public class Alumno extends Usuario{
         this.cantidadFaltas = cantidadFaltas;
     }
     
-    private void registrarAusencia(){
+    void registrarAusencia(){
         cantidadFaltas+=1;
 //        cantidadFaltas++;
 //        cantidadFaltas = cantidadFaltas+1;
+    }
+
+    public int getCantidadFaltas() {
+        return cantidadFaltas;
+    }
+
+    public void setCantidadFaltas(int cantidadFaltas) {
+        this.cantidadFaltas = cantidadFaltas;
     }
     
     
