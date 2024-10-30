@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package clase_29102024;
+package clase_30102024;
 
 /**
  *
@@ -10,20 +10,15 @@ package clase_29102024;
  */
 
 /*
-Polimorfismo por clases abstractas: 
-
--> Se debe modificar la clase, la debemos convertir en una clase abstracta.
-    -> Una clase abstracta: es una clase que posee como minimo un metodo abstracto o virtual. 
-    -> Un metodo abstracto es un metodo que NO POSEE CUERPO.  solamente podemos definir estos metodos dentro de clases abstractas. 
-
-    Notas importantes: 
-    -> Cuando una clase es abstracta, NO SE PUEDE INSTANCIAR. 
-    -> cuando una clase absztacta tiene un metodo abstracto y alguna clase hereda de ella.
-    La clase hija esta OBLIGADA a definiri un metodo polimorfico\
-    -> La clase hija debe si, o si, sobreescribir el metodo abstracto. 
+Polimorfimo por interfaces. 
+    -> Una interfaz no es una clase, no se comporta como una clase. 
+        -> Una interfaz no tiene atributos, pero si tiene constantes 
+        -> Una interfaz NO SE PUEDE INSTANCIAR. 
+        -> Una interfaz solamente posee metodos abstractos. 
+        -> No podemos herdar de una interfaz 
+        -> Una interfaz define un conjuto de reglas . 
 */
-
-public  abstract class Animal {
+public class Animal {
     double velocidad;
     String reflejos;
     int patas;
@@ -32,12 +27,9 @@ public  abstract class Animal {
     String nombre;
     String habitat;
     boolean estado;
+public Animal(){
     
-    public abstract void sonido();
-    
-    public Animal(){
-
-    }
+}
     public Animal(double velocidad, String reflejos, int patas, String raza, String instintos, String nombre, String habitat, boolean estado) {
         this.velocidad = velocidad;
         this.reflejos = reflejos;
@@ -121,10 +113,8 @@ public  abstract class Animal {
     
     public void alimentarse(){
         
-    }
+    }       
     
-   
-        
     public void aparasearse(){
         
     }

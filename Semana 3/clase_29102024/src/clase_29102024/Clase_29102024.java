@@ -14,7 +14,13 @@ public class Clase_29102024 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+//        Animal animal = new Animal(1.5,"Buenos",4,"Calico","Buenos","Muffin","Hogar",false); -> NO SE PUEDE INSTANCIAR POR QUE ES UNA CLASE ABSTRACTA
+
+    Gato gatito = new Gato(1.5,"Buenos",4,"Calico","Buenos","Muffin","Hogar",false);
+          Perro perrito = new Perro(1.5,"Buenos",4,"??","Buenos","Brownie","Hogar",false);
+
+          gatito.sonido(); //miau 
+          perrito.sonido(); //wuff
     }
     
 }
