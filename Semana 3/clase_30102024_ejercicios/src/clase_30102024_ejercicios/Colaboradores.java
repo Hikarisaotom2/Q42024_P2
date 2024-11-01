@@ -8,7 +8,7 @@ package clase_30102024_ejercicios;
  *
  * @author claudiacortes
  */
-public class Colaboradores {
+public abstract class Colaboradores {
     protected int id;
     protected String nombre;
     protected String fechaIngreso;
@@ -52,6 +52,8 @@ public class Colaboradores {
     public void setPuesto(String puesto) {
         this.puesto = puesto;
     }
+    
+    public abstract void generarBoleta();
 
     @Override
     public String toString() {

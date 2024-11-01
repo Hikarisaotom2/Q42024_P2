@@ -4,6 +4,8 @@
  */
 package clase_30102024_ejercicios;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author claudiacortes
@@ -102,6 +104,26 @@ public class Clase_30102024_ejercicios {
         -> salario  -> clase compuesta 
          -> recursos humanos  -> clase compuesta 
        */
+       
+       
+       ArrayList<Colaboradores> colaboradores = new ArrayList<Colaboradores>();
+       
+        colaboradores.add(new ColaboradorTiempoIndefinido(50000, 200, 300, 150, 123, "Claudia cortes", "10/10/2024", "Docente"));
+        colaboradores.add(new ColaboradorTemporal(16000, 200, 300, 150, 123, "Juan Perez", "11/1/2005", "Administrativo"));
+        colaboradores.add(new ColaboradorContratista(58, 300, 234, "Jualian Martinez", "1/2/2022", "Programador"));
+        
+        for (Colaboradores colaborador : colaboradores) {
+            System.out.println("GENERANDO BOLETA DE PAGO PARA: "+ colaborador.getNombre());
+            colaborador.generarBoleta();
+            System.out.println("\n");
+            
+//            if(colaborador instanceof ColaboradorTiempoIndefinido){
+//                ColaboradorTiempoIndefinido colab = (ColaboradorTiempoIndefinido) colaborador;
+////                colab.getSalarioBase();
+//                colab.generarBoleta();
+//            }
+            
+        }
     }
     
 }

@@ -22,5 +22,26 @@ public class ColaboradorTemporal extends Colaboradores{
         this.ahorro = ahorro;
     }
     
+        @Override
+    public void generarBoleta(){
+        /*
+        
+         -> salario base 
+                -> deduccion del rap
+                -> deduccion del ihss
+                -> deduccion de ahorro 
+        */
+        
+         double totalDeducciones =  rap+ihss+ahorro;
+        System.out.println("Boleta de pago: ");
+        System.out.println("Salario: "+this.salarioBase);
+        System.out.println("Mes actual: Octubre");
+        System.out.println("Deducciones: ");
+        System.out.println("RAP............."+rap);
+        System.out.println("IHSS............."+ihss);
+        System.out.println("AHORRO............."+ahorro);
+        System.out.println("TOTAL DEDUCCIONES............."+totalDeducciones);
+        System.out.println("TOTAL NETO............."+ (salarioBase-totalDeducciones));
+    }
     
 }
