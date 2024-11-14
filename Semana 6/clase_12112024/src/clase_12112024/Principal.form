@@ -26,12 +26,16 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jTabbedPane1" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jTabbedPane1" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jTabbedPane1" alignment="0" max="32767" attributes="0"/>
+          <Component id="jTabbedPane1" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -49,16 +53,16 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="jpanel_comboBox">
+        <Container class="javax.swing.JPanel" name="jpanel_agregar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+              <Color blue="ff" green="cc" red="ff" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Combo box">
-                <Property name="tabTitle" type="java.lang.String" value="Combo box"/>
+              <JTabbedPaneConstraints tabName="Agregar">
+                <Property name="tabTitle" type="java.lang.String" value="Agregar"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -69,82 +73,83 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
-                              <Component id="jComboBox1" min="-2" pref="391" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lbl_nombrePersona" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbl_correoPersona" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="txt_nombrePersona" pref="519" max="32767" attributes="0"/>
+                                  <Component id="txt_correoPersona" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="217" max="-2" attributes="0"/>
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="333" max="-2" attributes="0"/>
+                              <Component id="btn_agregar" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="277" max="32767" attributes="0"/>
+                      <EmptySpace pref="139" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="407" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lbl_nombrePersona" min="-2" max="-2" attributes="0"/>
+                          <Component id="txt_nombrePersona" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                              <Component id="lbl_correoPersona" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                              <Component id="txt_correoPersona" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
+                      <Component id="btn_agregar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="282" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JComboBox" name="jComboBox1">
+            <Component class="javax.swing.JLabel" name="lbl_nombrePersona">
               <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="5">
-                    <StringItem index="0" value="Create"/>
-                    <StringItem index="1" value="Read"/>
-                    <StringItem index="2" value="Update"/>
-                    <StringItem index="3" value="Delete"/>
-                    <StringItem index="4" value=" "/>
-                  </StringArray>
-                </Property>
+                <Property name="text" type="java.lang.String" value="Nombre"/>
               </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel1">
+            <Component class="javax.swing.JLabel" name="lbl_correoPersona">
               <Properties>
-                <Property name="text" type="java.lang.String" value="MVC"/>
+                <Property name="text" type="java.lang.String" value="Correo"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txt_nombrePersona">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jTextField1"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txt_correoPersona">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jTextField1"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btn_agregar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Agregar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_agregarMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="jpanel_textAreas">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="ff" type="rgb"/>
-            </Property>
-          </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Text areas">
-                <Property name="tabTitle" type="java.lang.String" value="Text areas"/>
-              </JTabbedPaneConstraints>
-            </Constraint>
-          </Constraints>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="817" max="32767" attributes="0"/>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="580" max="32767" attributes="0"/>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-        </Container>
-        <Container class="javax.swing.JPanel" name="jpanel_radioButtons">
+        <Container class="javax.swing.JPanel" name="jpanel_verInfo">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="ff" red="ff" type="rgb"/>
@@ -152,8 +157,8 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Radio buttons">
-                <Property name="tabTitle" type="java.lang.String" value="Radio buttons"/>
+              <JTabbedPaneConstraints tabName="Ver informaci&#xf3;n">
+                <Property name="tabTitle" type="java.lang.String" value="Ver informaci&#xf3;n"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -161,15 +166,220 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="817" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="115" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lbl_nombrePersonaInfo" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbl_correoPersonaInfo" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lbl_posSeleccionada" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jcb_usuarios" max="32767" attributes="0"/>
+                              <Component id="txt_nombrePersonaInfo" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txt_correoPersonaInfo" alignment="0" pref="519" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="580" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jcb_usuarios" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbl_posSeleccionada" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lbl_nombrePersonaInfo" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="txt_nombrePersonaInfo" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                              <Component id="lbl_correoPersonaInfo" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                              <Component id="txt_correoPersonaInfo" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="306" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
           </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lbl_nombrePersonaInfo">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nombre"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txt_nombrePersonaInfo">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jTextField1"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txt_correoPersonaInfo">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jTextField1"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lbl_correoPersonaInfo">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Correo"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="jcb_usuarios">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jcb_usuariosActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Usuarios"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Pos:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lbl_posSeleccionada">
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jpanel_editar">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Editar">
+                <Property name="tabTitle" type="java.lang.String" value="Editar"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="90" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lbl_nombrePersonaEditar" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbl_correoPersonaEditar" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jcb_usuariosEditar" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txt_nombrePersonaEditar" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txt_correoPersonaEditar" alignment="0" min="-2" pref="519" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="328" max="-2" attributes="0"/>
+                      <Component id="btn_editar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jcb_usuariosEditar" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="95" pref="95" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lbl_nombrePersonaEditar" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="txt_nombrePersonaEditar" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                              <Component id="lbl_correoPersonaEditar" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                              <Component id="txt_correoPersonaEditar" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+                      <Component id="btn_editar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="157" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JComboBox" name="jcb_usuariosEditar">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jcb_usuariosEditarActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Usuarios"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txt_nombrePersonaEditar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jTextField1"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lbl_nombrePersonaEditar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nombre"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txt_correoPersonaEditar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jTextField1"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lbl_correoPersonaEditar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Correo"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btn_editar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Editar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_editarMouseClicked"/>
+              </Events>
+            </Component>
+          </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jpanel_tables">
           <Properties>
@@ -191,7 +401,7 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                       <Component id="lbl_nombre" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="30" max="32767" attributes="0"/>
+                      <EmptySpace pref="18" max="32767" attributes="0"/>
                       <Component id="lbl_mensaje" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="523" max="-2" attributes="0"/>
                   </Group>
@@ -291,6 +501,71 @@
                 </Container>
               </SubComponents>
             </Container>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jpanel_eliminar">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Combo box">
+                <Property name="tabTitle" type="java.lang.String" value="Combo box"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
+                              <Component id="jcb_usuariosEliminar" min="-2" pref="391" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="279" max="-2" attributes="0"/>
+                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="273" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                      <Component id="jcb_usuariosEliminar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="403" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JComboBox" name="jcb_usuariosEliminar">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="eliminar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton1MouseClicked"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
       </SubComponents>

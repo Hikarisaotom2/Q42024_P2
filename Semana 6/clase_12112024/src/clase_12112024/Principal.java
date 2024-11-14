@@ -4,6 +4,10 @@
  */
 package clase_12112024;
 
+import java.util.HashSet;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author claudiacortes
@@ -27,11 +31,29 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jpanel_comboBox = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
-        jpanel_textAreas = new javax.swing.JPanel();
-        jpanel_radioButtons = new javax.swing.JPanel();
+        jpanel_agregar = new javax.swing.JPanel();
+        lbl_nombrePersona = new javax.swing.JLabel();
+        lbl_correoPersona = new javax.swing.JLabel();
+        txt_nombrePersona = new javax.swing.JTextField();
+        txt_correoPersona = new javax.swing.JTextField();
+        btn_agregar = new javax.swing.JButton();
+        jpanel_verInfo = new javax.swing.JPanel();
+        lbl_nombrePersonaInfo = new javax.swing.JLabel();
+        txt_nombrePersonaInfo = new javax.swing.JTextField();
+        txt_correoPersonaInfo = new javax.swing.JTextField();
+        lbl_correoPersonaInfo = new javax.swing.JLabel();
+        jcb_usuarios = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        lbl_posSeleccionada = new javax.swing.JLabel();
+        jpanel_editar = new javax.swing.JPanel();
+        jcb_usuariosEditar = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
+        txt_nombrePersonaEditar = new javax.swing.JTextField();
+        lbl_nombrePersonaEditar = new javax.swing.JLabel();
+        txt_correoPersonaEditar = new javax.swing.JTextField();
+        lbl_correoPersonaEditar = new javax.swing.JLabel();
+        btn_editar = new javax.swing.JButton();
         jpanel_tables = new javax.swing.JPanel();
         lbl_nombre = new javax.swing.JLabel();
         lbl_mensaje = new javax.swing.JLabel();
@@ -39,6 +61,9 @@ public class Principal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
+        jpanel_eliminar = new javax.swing.JPanel();
+        jcb_usuariosEliminar = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 51));
@@ -47,67 +72,199 @@ public class Principal extends javax.swing.JFrame {
         jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTabbedPane1.setOpaque(true);
 
-        jpanel_comboBox.setBackground(new java.awt.Color(204, 204, 255));
+        jpanel_agregar.setBackground(new java.awt.Color(255, 204, 255));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Create", "Read", "Update", "Delete", " " }));
+        lbl_nombrePersona.setText("Nombre");
 
-        jLabel1.setText("MVC");
+        lbl_correoPersona.setText("Correo");
 
-        javax.swing.GroupLayout jpanel_comboBoxLayout = new javax.swing.GroupLayout(jpanel_comboBox);
-        jpanel_comboBox.setLayout(jpanel_comboBoxLayout);
-        jpanel_comboBoxLayout.setHorizontalGroup(
-            jpanel_comboBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpanel_comboBoxLayout.createSequentialGroup()
-                .addGroup(jpanel_comboBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpanel_comboBoxLayout.createSequentialGroup()
-                        .addGap(149, 149, 149)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jpanel_comboBoxLayout.createSequentialGroup()
-                        .addGap(217, 217, 217)
-                        .addComponent(jLabel1)))
-                .addContainerGap(277, Short.MAX_VALUE))
+        txt_nombrePersona.setText("jTextField1");
+
+        txt_correoPersona.setText("jTextField1");
+
+        btn_agregar.setText("Agregar");
+        btn_agregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_agregarMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jpanel_agregarLayout = new javax.swing.GroupLayout(jpanel_agregar);
+        jpanel_agregar.setLayout(jpanel_agregarLayout);
+        jpanel_agregarLayout.setHorizontalGroup(
+            jpanel_agregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanel_agregarLayout.createSequentialGroup()
+                .addGroup(jpanel_agregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpanel_agregarLayout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addGroup(jpanel_agregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbl_nombrePersona)
+                            .addComponent(lbl_correoPersona))
+                        .addGap(48, 48, 48)
+                        .addGroup(jpanel_agregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txt_nombrePersona, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)
+                            .addComponent(txt_correoPersona)))
+                    .addGroup(jpanel_agregarLayout.createSequentialGroup()
+                        .addGap(333, 333, 333)
+                        .addComponent(btn_agregar)))
+                .addContainerGap(139, Short.MAX_VALUE))
         );
-        jpanel_comboBoxLayout.setVerticalGroup(
-            jpanel_comboBoxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpanel_comboBoxLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(106, 106, 106)
-                .addComponent(jLabel1)
-                .addContainerGap(407, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Combo box", jpanel_comboBox);
-
-        jpanel_textAreas.setBackground(new java.awt.Color(255, 204, 255));
-
-        javax.swing.GroupLayout jpanel_textAreasLayout = new javax.swing.GroupLayout(jpanel_textAreas);
-        jpanel_textAreas.setLayout(jpanel_textAreasLayout);
-        jpanel_textAreasLayout.setHorizontalGroup(
-            jpanel_textAreasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 817, Short.MAX_VALUE)
-        );
-        jpanel_textAreasLayout.setVerticalGroup(
-            jpanel_textAreasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 580, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Text areas", jpanel_textAreas);
-
-        jpanel_radioButtons.setBackground(new java.awt.Color(255, 255, 204));
-
-        javax.swing.GroupLayout jpanel_radioButtonsLayout = new javax.swing.GroupLayout(jpanel_radioButtons);
-        jpanel_radioButtons.setLayout(jpanel_radioButtonsLayout);
-        jpanel_radioButtonsLayout.setHorizontalGroup(
-            jpanel_radioButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 817, Short.MAX_VALUE)
-        );
-        jpanel_radioButtonsLayout.setVerticalGroup(
-            jpanel_radioButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 580, Short.MAX_VALUE)
+        jpanel_agregarLayout.setVerticalGroup(
+            jpanel_agregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanel_agregarLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(jpanel_agregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_nombrePersona)
+                    .addComponent(txt_nombrePersona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jpanel_agregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpanel_agregarLayout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(lbl_correoPersona))
+                    .addGroup(jpanel_agregarLayout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addComponent(txt_correoPersona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(124, 124, 124)
+                .addComponent(btn_agregar)
+                .addContainerGap(282, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Radio buttons", jpanel_radioButtons);
+        jTabbedPane1.addTab("Agregar", jpanel_agregar);
+
+        jpanel_verInfo.setBackground(new java.awt.Color(255, 255, 204));
+
+        lbl_nombrePersonaInfo.setText("Nombre");
+
+        txt_nombrePersonaInfo.setText("jTextField1");
+
+        txt_correoPersonaInfo.setText("jTextField1");
+
+        lbl_correoPersonaInfo.setText("Correo");
+
+        jcb_usuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcb_usuariosActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Usuarios");
+
+        jLabel3.setText("Pos:");
+
+        javax.swing.GroupLayout jpanel_verInfoLayout = new javax.swing.GroupLayout(jpanel_verInfo);
+        jpanel_verInfo.setLayout(jpanel_verInfoLayout);
+        jpanel_verInfoLayout.setHorizontalGroup(
+            jpanel_verInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanel_verInfoLayout.createSequentialGroup()
+                .addContainerGap(115, Short.MAX_VALUE)
+                .addGroup(jpanel_verInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_nombrePersonaInfo)
+                    .addComponent(lbl_correoPersonaInfo)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
+                .addGap(48, 48, 48)
+                .addGroup(jpanel_verInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_posSeleccionada)
+                    .addGroup(jpanel_verInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jcb_usuarios, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txt_nombrePersonaInfo)
+                        .addComponent(txt_correoPersonaInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)))
+                .addGap(72, 72, 72))
+        );
+        jpanel_verInfoLayout.setVerticalGroup(
+            jpanel_verInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanel_verInfoLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(jpanel_verInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jcb_usuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(36, 36, 36)
+                .addGroup(jpanel_verInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(lbl_posSeleccionada))
+                .addGap(42, 42, 42)
+                .addGroup(jpanel_verInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_nombrePersonaInfo)
+                    .addComponent(txt_nombrePersonaInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jpanel_verInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpanel_verInfoLayout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(lbl_correoPersonaInfo))
+                    .addGroup(jpanel_verInfoLayout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addComponent(txt_correoPersonaInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(306, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Ver información", jpanel_verInfo);
+
+        jcb_usuariosEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcb_usuariosEditarActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Usuarios");
+
+        txt_nombrePersonaEditar.setText("jTextField1");
+
+        lbl_nombrePersonaEditar.setText("Nombre");
+
+        txt_correoPersonaEditar.setText("jTextField1");
+
+        lbl_correoPersonaEditar.setText("Correo");
+
+        btn_editar.setText("Editar");
+        btn_editar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_editarMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jpanel_editarLayout = new javax.swing.GroupLayout(jpanel_editar);
+        jpanel_editar.setLayout(jpanel_editarLayout);
+        jpanel_editarLayout.setHorizontalGroup(
+            jpanel_editarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanel_editarLayout.createSequentialGroup()
+                .addContainerGap(90, Short.MAX_VALUE)
+                .addGroup(jpanel_editarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_nombrePersonaEditar)
+                    .addComponent(lbl_correoPersonaEditar)
+                    .addComponent(jLabel4))
+                .addGap(48, 48, 48)
+                .addGroup(jpanel_editarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jcb_usuariosEditar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_nombrePersonaEditar)
+                    .addComponent(txt_correoPersonaEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 519, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(97, 97, 97))
+            .addGroup(jpanel_editarLayout.createSequentialGroup()
+                .addGap(328, 328, 328)
+                .addComponent(btn_editar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jpanel_editarLayout.setVerticalGroup(
+            jpanel_editarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanel_editarLayout.createSequentialGroup()
+                .addGap(88, 88, 88)
+                .addGroup(jpanel_editarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jcb_usuariosEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(95, 95, 95)
+                .addGroup(jpanel_editarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_nombrePersonaEditar)
+                    .addComponent(txt_nombrePersonaEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jpanel_editarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpanel_editarLayout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(lbl_correoPersonaEditar))
+                    .addGroup(jpanel_editarLayout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addComponent(txt_correoPersonaEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(79, 79, 79)
+                .addComponent(btn_editar)
+                .addContainerGap(157, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Editar", jpanel_editar);
 
         jpanel_tables.setBackground(new java.awt.Color(255, 204, 102));
 
@@ -150,7 +307,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanel_tablesLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(lbl_nombre)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(lbl_mensaje)
                 .addGap(523, 523, 523))
             .addGroup(jpanel_tablesLayout.createSequentialGroup()
@@ -172,19 +329,127 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Tablas", jpanel_tables);
 
+        jpanel_eliminar.setBackground(new java.awt.Color(204, 204, 255));
+
+        jButton1.setText("eliminar");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jpanel_eliminarLayout = new javax.swing.GroupLayout(jpanel_eliminar);
+        jpanel_eliminar.setLayout(jpanel_eliminarLayout);
+        jpanel_eliminarLayout.setHorizontalGroup(
+            jpanel_eliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanel_eliminarLayout.createSequentialGroup()
+                .addGroup(jpanel_eliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpanel_eliminarLayout.createSequentialGroup()
+                        .addGap(141, 141, 141)
+                        .addComponent(jcb_usuariosEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jpanel_eliminarLayout.createSequentialGroup()
+                        .addGap(279, 279, 279)
+                        .addComponent(jButton1)))
+                .addContainerGap(273, Short.MAX_VALUE))
+        );
+        jpanel_eliminarLayout.setVerticalGroup(
+            jpanel_eliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanel_eliminarLayout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(jcb_usuariosEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(79, 79, 79)
+                .addComponent(jButton1)
+                .addContainerGap(403, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Combo box", jpanel_eliminar);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_agregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_agregarMouseClicked
+        String nombre = txt_nombrePersona.getText();
+        String correo = txt_correoPersona.getText();
+        Persona p = new Persona(nombre,correo);
+        
+        DefaultComboBoxModel modelo = (DefaultComboBoxModel)jcb_usuarios.getModel();
+        modelo.addElement(p);
+        jcb_usuarios.setModel(modelo);
+        
+        
+         DefaultComboBoxModel modeloEditar = (DefaultComboBoxModel)jcb_usuariosEditar.getModel();
+        modeloEditar.addElement(p);
+        jcb_usuariosEditar.setModel(modeloEditar);
+        
+         DefaultComboBoxModel modeloEliminar = (DefaultComboBoxModel)jcb_usuariosEliminar.getModel();
+        modeloEliminar.addElement(p);
+        jcb_usuariosEliminar.setModel(modeloEliminar);
+        
+
+        JOptionPane.showMessageDialog(null, "Se creo el usuario exitosamente");
+    }//GEN-LAST:event_btn_agregarMouseClicked
+
+    private void jcb_usuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb_usuariosActionPerformed
+        // TODO add your handling code here:
+       int pos =  jcb_usuarios.getSelectedIndex();
+       Persona personaSeleccionada = (Persona)jcb_usuarios.getSelectedItem();
+       // concatenacion -> ""+pos
+       lbl_posSeleccionada.setText(pos+"");
+       txt_nombrePersonaInfo.setText(personaSeleccionada.getNombre());
+       txt_correoPersonaInfo.setText(personaSeleccionada.getCorreo());
+       
+       personaSeleccionadaTemporal = personaSeleccionada;
+                
+    }//GEN-LAST:event_jcb_usuariosActionPerformed
+
+    private void jcb_usuariosEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb_usuariosEditarActionPerformed
+        int pos =  jcb_usuariosEditar.getSelectedIndex();
+       Persona personaSeleccionada = (Persona)jcb_usuariosEditar.getSelectedItem();
+       txt_nombrePersonaEditar.setText(personaSeleccionada.getNombre());
+       txt_correoPersonaEditar.setText(personaSeleccionada.getCorreo());
+       personaSeleccionadaTemporal = personaSeleccionada;
+    }//GEN-LAST:event_jcb_usuariosEditarActionPerformed
+
+    private void btn_editarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_editarMouseClicked
+        String nuevoNombre = txt_nombrePersonaEditar.getText();
+        String nuevoCorreo = txt_correoPersonaEditar.getText();
+        
+        // 1) obteniendo el usuario que hay seleccionado actualmente en el combobox 
+//         Persona personaSeleccionada = (Persona)jcb_usuariosEditar.getSelectedItem();
+//         
+//         personaSeleccionada.setCorreo(nuevoCorreo);
+//         personaSeleccionada.setNombre(nuevoNombre);
+         
+    // 2) trabajar con una variable temporal
+        personaSeleccionadaTemporal.setCorreo(nuevoCorreo);
+        personaSeleccionadaTemporal.setNombre(nuevoNombre);
+         JOptionPane.showMessageDialog(null, "Se actualizo el usuario exitosamente");
+         
+        
+    }//GEN-LAST:event_btn_editarMouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        int pos = jcb_usuariosEliminar.getSelectedIndex();
+        jcb_usuariosEliminar.removeItemAt(pos);
+        jcb_usuariosEditar.removeItemAt(pos);
+        jcb_usuarios.removeItemAt(pos);
+        JOptionPane.showMessageDialog(null, "Se elimino el usuario exitosamente");
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -220,20 +485,41 @@ public class Principal extends javax.swing.JFrame {
             }
         });
     }
-
+    private Persona personaSeleccionadaTemporal;
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btn_agregar;
+    private javax.swing.JButton btn_editar;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
-    private javax.swing.JPanel jpanel_comboBox;
-    private javax.swing.JPanel jpanel_radioButtons;
+    private javax.swing.JComboBox<String> jcb_usuarios;
+    private javax.swing.JComboBox<String> jcb_usuariosEditar;
+    private javax.swing.JComboBox<String> jcb_usuariosEliminar;
+    private javax.swing.JPanel jpanel_agregar;
+    private javax.swing.JPanel jpanel_editar;
+    private javax.swing.JPanel jpanel_eliminar;
     private javax.swing.JPanel jpanel_tables;
-    private javax.swing.JPanel jpanel_textAreas;
+    private javax.swing.JPanel jpanel_verInfo;
+    private javax.swing.JLabel lbl_correoPersona;
+    private javax.swing.JLabel lbl_correoPersonaEditar;
+    private javax.swing.JLabel lbl_correoPersonaInfo;
     private javax.swing.JLabel lbl_mensaje;
     private javax.swing.JLabel lbl_nombre;
+    private javax.swing.JLabel lbl_nombrePersona;
+    private javax.swing.JLabel lbl_nombrePersonaEditar;
+    private javax.swing.JLabel lbl_nombrePersonaInfo;
+    private javax.swing.JLabel lbl_posSeleccionada;
+    private javax.swing.JTextField txt_correoPersona;
+    private javax.swing.JTextField txt_correoPersonaEditar;
+    private javax.swing.JTextField txt_correoPersonaInfo;
+    private javax.swing.JTextField txt_nombrePersona;
+    private javax.swing.JTextField txt_nombrePersonaEditar;
+    private javax.swing.JTextField txt_nombrePersonaInfo;
     // End of variables declaration//GEN-END:variables
 }
