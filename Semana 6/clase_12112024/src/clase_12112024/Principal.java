@@ -6,6 +6,7 @@ package clase_12112024;
 
 
 import java.awt.Color;
+import java.awt.Font;
 import java.util.HashSet;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JColorChooser;
@@ -72,13 +73,16 @@ public class Principal extends javax.swing.JFrame {
         btn_actualizarTamano = new javax.swing.JButton();
         btn_actualizarFuente = new javax.swing.JButton();
         btn_actualizarEstilo = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        txt_tamanoFuente = new javax.swing.JTextField();
+        txt_nombreFuente = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jcb_estiloFuente = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         btn_actualizarBackground = new javax.swing.JButton();
+        check_terminoYCondiciones = new javax.swing.JCheckBox();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
         jmb_menuPrincipal = new javax.swing.JMenuBar();
         jm_archivo = new javax.swing.JMenu();
         jm_submenu = new javax.swing.JMenu();
@@ -389,16 +393,31 @@ public class Principal extends javax.swing.JFrame {
         lbl_etiquetaFuentes.setText("jLabel1");
 
         btn_actualizarTamano.setText("Actualizar");
+        btn_actualizarTamano.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_actualizarTamanoMouseClicked(evt);
+            }
+        });
 
         btn_actualizarFuente.setText("Actualizar");
+        btn_actualizarFuente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_actualizarFuenteMouseClicked(evt);
+            }
+        });
 
         btn_actualizarEstilo.setText("Actualizar");
+        btn_actualizarEstilo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_actualizarEstiloMouseClicked(evt);
+            }
+        });
 
         jLabel5.setText("Tamaño");
 
         jLabel6.setText("Nombre de la fuente");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Negrita", "Normal", "Cursivo" }));
+        jcb_estiloFuente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Negrita", "Normal", "Cursivo" }));
 
         jLabel7.setText("Estilo de la fuente");
 
@@ -409,6 +428,17 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        check_terminoYCondiciones.setText("Lei todos los terminos y condiciones");
+        check_terminoYCondiciones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                check_terminoYCondicionesMouseClicked(evt);
+            }
+        });
+
+        jRadioButton1.setText("Casado");
+
+        jRadioButton2.setText("Soltero");
+
         javax.swing.GroupLayout jpanel_fuentesLayout = new javax.swing.GroupLayout(jpanel_fuentes);
         jpanel_fuentes.setLayout(jpanel_fuentesLayout);
         jpanel_fuentesLayout.setHorizontalGroup(
@@ -416,52 +446,66 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jpanel_fuentesLayout.createSequentialGroup()
                 .addGroup(jpanel_fuentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpanel_fuentesLayout.createSequentialGroup()
+                        .addGap(277, 277, 277)
+                        .addComponent(btn_actualizarBackground))
+                    .addGroup(jpanel_fuentesLayout.createSequentialGroup()
                         .addGap(97, 97, 97)
                         .addGroup(jpanel_fuentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel7))
-                        .addGap(33, 33, 33)
-                        .addGroup(jpanel_fuentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboBox1, 0, 121, Short.MAX_VALUE)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField2))
-                        .addGap(39, 39, 39)
+                            .addComponent(lbl_etiquetaFuentes, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jpanel_fuentesLayout.createSequentialGroup()
+                                .addGroup(jpanel_fuentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel7))
+                                .addGap(33, 33, 33)
+                                .addGroup(jpanel_fuentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jcb_estiloFuente, 0, 121, Short.MAX_VALUE)
+                                    .addComponent(txt_tamanoFuente)
+                                    .addComponent(txt_nombreFuente))
+                                .addGap(39, 39, 39)
+                                .addGroup(jpanel_fuentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btn_actualizarTamano)
+                                    .addComponent(btn_actualizarFuente)
+                                    .addComponent(btn_actualizarEstilo)))))
+                    .addGroup(jpanel_fuentesLayout.createSequentialGroup()
+                        .addGap(233, 233, 233)
                         .addGroup(jpanel_fuentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn_actualizarTamano)
-                            .addComponent(btn_actualizarFuente)
-                            .addComponent(btn_actualizarEstilo)))
-                    .addGroup(jpanel_fuentesLayout.createSequentialGroup()
-                        .addGap(179, 179, 179)
-                        .addComponent(lbl_etiquetaFuentes, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jpanel_fuentesLayout.createSequentialGroup()
-                        .addGap(277, 277, 277)
-                        .addComponent(btn_actualizarBackground)))
-                .addContainerGap(309, Short.MAX_VALUE))
+                            .addComponent(jRadioButton2)
+                            .addGroup(jpanel_fuentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(check_terminoYCondiciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jRadioButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addContainerGap(310, Short.MAX_VALUE))
         );
         jpanel_fuentesLayout.setVerticalGroup(
             jpanel_fuentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpanel_fuentesLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addGap(49, 49, 49)
                 .addComponent(lbl_etiquetaFuentes, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addGroup(jpanel_fuentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addComponent(btn_actualizarTamano))
+                .addGap(51, 51, 51)
+                .addGroup(jpanel_fuentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jpanel_fuentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txt_tamanoFuente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_actualizarTamano)))
                 .addGap(18, 18, 18)
                 .addGroup(jpanel_fuentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_nombreFuente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
                     .addComponent(btn_actualizarFuente))
                 .addGap(18, 18, 18)
                 .addGroup(jpanel_fuentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcb_estiloFuente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_actualizarEstilo))
                 .addGap(51, 51, 51)
                 .addComponent(btn_actualizarBackground)
-                .addContainerGap(226, Short.MAX_VALUE))
+                .addGap(37, 37, 37)
+                .addComponent(check_terminoYCondiciones)
+                .addGap(18, 18, 18)
+                .addComponent(jRadioButton1)
+                .addGap(18, 18, 18)
+                .addComponent(jRadioButton2)
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Fuentes", jpanel_fuentes);
@@ -602,8 +646,62 @@ public class Principal extends javax.swing.JFrame {
     private void btn_actualizarBackgroundMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_actualizarBackgroundMouseClicked
        // static 
         Color seleccionado = JColorChooser.showDialog(null,"Seleccione el color de la letra",Color.BLACK);
+//        lbl_etiquetaFuentes.setForeground(Color.ORANGE); agregar el color manualmente 
         lbl_etiquetaFuentes.setForeground(seleccionado);
     }//GEN-LAST:event_btn_actualizarBackgroundMouseClicked
+
+    private void btn_actualizarTamanoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_actualizarTamanoMouseClicked
+        // TODO add your handling code here:
+        int size = Integer.parseInt(txt_tamanoFuente.getText());
+        /*nombre,estilo,tamano*/
+        String nombre = lbl_etiquetaFuentes.getFont().getFontName();
+        int estilo = lbl_etiquetaFuentes.getFont().getStyle();
+        Font fuente = new Font(nombre,estilo,size);
+        lbl_etiquetaFuentes.setFont(fuente);
+    }//GEN-LAST:event_btn_actualizarTamanoMouseClicked
+
+    private void btn_actualizarFuenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_actualizarFuenteMouseClicked
+       String nombre = txt_nombreFuente.getText();
+       int estilo = lbl_etiquetaFuentes.getFont().getStyle();
+       int size = lbl_etiquetaFuentes.getFont().getSize();
+        Font fuente = new Font(nombre,estilo,size);
+        lbl_etiquetaFuentes.setFont(fuente);
+    }//GEN-LAST:event_btn_actualizarFuenteMouseClicked
+
+    private void btn_actualizarEstiloMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_actualizarEstiloMouseClicked
+     //Negrita, Normal, Cursivo
+     String nombre =  lbl_etiquetaFuentes.getFont().getFontName();
+     int size = lbl_etiquetaFuentes.getFont().getSize();
+     Font fuente;
+        if(jcb_estiloFuente.getSelectedIndex()==0){
+          fuente  = new Font(nombre,Font.BOLD,size);
+     }else if(jcb_estiloFuente.getSelectedIndex()==1){
+         fuente = new Font(nombre,Font.PLAIN,size);
+     }else{
+          fuente = new Font(nombre,Font.ITALIC,size);
+     }
+          lbl_etiquetaFuentes.setFont(fuente);
+    }//GEN-LAST:event_btn_actualizarEstiloMouseClicked
+
+    private void check_terminoYCondicionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_check_terminoYCondicionesMouseClicked
+        // TODO add your handling code here:
+//        if (check_terminoYCondiciones.isSelected()) {
+//                 btn_actualizarBackground.setEnabled(true);
+//                  btn_actualizarEstilo.setEnabled(true);
+//                  btn_actualizarFuente.setEnabled(true);
+//                  btn_actualizarTamano.setEnabled(true);
+//        }else{
+//              btn_actualizarBackground.setEnabled(false);
+//                  btn_actualizarEstilo.setEnabled(false);
+//                  btn_actualizarFuente.setEnabled(false);
+//                  btn_actualizarTamano.setEnabled(false);
+//        }
+            boolean isEnabled = check_terminoYCondiciones.isSelected();
+                  btn_actualizarBackground.setEnabled(isEnabled);
+                  btn_actualizarEstilo.setEnabled(isEnabled);
+                  btn_actualizarFuente.setEnabled(isEnabled);
+                  btn_actualizarTamano.setEnabled(isEnabled);
+    }//GEN-LAST:event_check_terminoYCondicionesMouseClicked
 
     /**
      * @param args the command line arguments
@@ -647,8 +745,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btn_actualizarTamano;
     private javax.swing.JButton btn_agregar;
     private javax.swing.JButton btn_editar;
+    private javax.swing.JCheckBox check_terminoYCondiciones;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -657,11 +755,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JComboBox<String> jcb_estiloFuente;
     private javax.swing.JComboBox<String> jcb_usuarios;
     private javax.swing.JComboBox<String> jcb_usuariosEditar;
     private javax.swing.JComboBox<String> jcb_usuariosEliminar;
@@ -691,8 +790,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField txt_correoPersona;
     private javax.swing.JTextField txt_correoPersonaEditar;
     private javax.swing.JTextField txt_correoPersonaInfo;
+    private javax.swing.JTextField txt_nombreFuente;
     private javax.swing.JTextField txt_nombrePersona;
     private javax.swing.JTextField txt_nombrePersonaEditar;
     private javax.swing.JTextField txt_nombrePersonaInfo;
+    private javax.swing.JTextField txt_tamanoFuente;
     // End of variables declaration//GEN-END:variables
 }
