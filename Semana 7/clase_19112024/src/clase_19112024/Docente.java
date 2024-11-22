@@ -14,4 +14,9 @@ public class Docente extends Usuario{
         super(nombre);
     }
     
+    
+    public Object [] getFila(){
+        return new Object[] { getNombre(), "Docente"};
+    }
+    
 }

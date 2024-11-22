@@ -5,6 +5,7 @@
 package clase_19112024;
 
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 
@@ -29,6 +30,14 @@ public class Principal extends javax.swing.JFrame {
         // agregando al arbol las cartegorias de docentes y alumnos
         agregarCategoriasUsuarios();
         
+        // vaciar la tabla de la informacion vieja 
+        DefaultTableModel modelo = new DefaultTableModel();
+        jt_tablaUsuarios.setModel(modelo);
+     
+        // agregar a la tabla los titulos correctos. 
+        
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Tipo usuario");
     }
     
     /*
@@ -67,8 +76,6 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jt_usuarios = new javax.swing.JTree();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         txt_nombre = new javax.swing.JTextField();
@@ -76,15 +83,18 @@ public class Principal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         lbl_usuarioSeleccionado = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jt_usuarios = new javax.swing.JTree();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jt_tablaUsuarios = new javax.swing.JTable();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        lbl_filaSeleccionada = new javax.swing.JLabel();
+        lbl_columnaSeleccionada = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        lbl_valorSeleccionado = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jt_usuarios.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jt_usuariosMouseClicked(evt);
-            }
-        });
-        jScrollPane2.setViewportView(jt_usuarios);
 
         jLabel1.setText("Nombre");
 
@@ -102,6 +112,43 @@ public class Principal extends javax.swing.JFrame {
         jLabel3.setText("Usuario seleccionado: ");
 
         lbl_usuarioSeleccionado.setText("jLabel4");
+
+        jt_usuarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jt_usuariosMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(jt_usuarios);
+
+        jt_tablaUsuarios.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jt_tablaUsuarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jt_tablaUsuariosMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jt_tablaUsuarios);
+
+        jLabel4.setText("Fila seleccionada:");
+
+        jLabel5.setText("Columna seleccionada");
+
+        lbl_filaSeleccionada.setText("jLabel6");
+
+        lbl_columnaSeleccionada.setText("jLabel7");
+
+        jLabel6.setText("Valor seleccionado");
+
+        lbl_valorSeleccionado.setText("jLabel7");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -131,7 +178,28 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(jButton1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lbl_usuarioSeleccionado, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 594, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(jLabel4)
+                        .addGap(34, 34, 34)
+                        .addComponent(lbl_filaSeleccionada)
+                        .addGap(111, 111, 111)
+                        .addComponent(jLabel5)
+                        .addGap(73, 73, 73)
+                        .addComponent(lbl_columnaSeleccionada))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(213, 213, 213)
+                        .addComponent(jLabel6)
+                        .addGap(39, 39, 39)
+                        .addComponent(lbl_valorSeleccionado)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,11 +219,26 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(txt_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(26, 26, 26)
                         .addComponent(jButton1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(lbl_usuarioSeleccionado))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(jLabel3)))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(lbl_usuarioSeleccionado))
-                .addGap(98, 98, 98))
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5)
+                    .addComponent(lbl_filaSeleccionada)
+                    .addComponent(lbl_columnaSeleccionada))
+                .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(lbl_valorSeleccionado))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         pack();
@@ -177,12 +260,19 @@ public class Principal extends javax.swing.JFrame {
             DefaultMutableTreeNode nuevoDocente = new DefaultMutableTreeNode(docente);
             nodoDocentes.add(nuevoDocente);
             modeloArbol.reload();
+                
+           DefaultTableModel modeloTabla = (DefaultTableModel)jt_tablaUsuarios.getModel();
+           modeloTabla.addRow(docente.getFila());
+           
         }else{ //alumno
             Alumno alumno = new Alumno(nombre);
             DefaultMutableTreeNode nodoAlumnos = (DefaultMutableTreeNode)raiz.getChildAt(1);
             DefaultMutableTreeNode nuevoAlumno = new DefaultMutableTreeNode(alumno);
             nodoAlumnos.add(nuevoAlumno);
             modeloArbol.reload();
+            
+            DefaultTableModel modeloTable =(DefaultTableModel) jt_tablaUsuarios.getModel();
+            modeloTable.addRow(new Object[]{alumno.getNombre(), "Alumno"});
         }
         
         JOptionPane.showMessageDialog(null, "Usuario agregado exitosamente'");
@@ -212,6 +302,19 @@ public class Principal extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jt_usuariosMouseClicked
+
+    private void jt_tablaUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jt_tablaUsuariosMouseClicked
+       int fila = jt_tablaUsuarios.getSelectedRow();
+       int columna = jt_tablaUsuarios.getSelectedColumn();
+       lbl_filaSeleccionada.setText(fila+"");
+       lbl_columnaSeleccionada.setText(columna+"");
+       
+       if(fila>=0 && columna>=0){
+           DefaultTableModel modelo = (DefaultTableModel) jt_tablaUsuarios.getModel();
+           Object objetoSeleccionado = modelo.getValueAt(fila, columna);
+           lbl_valorSeleccionado.setText(objetoSeleccionado.toString());
+       }
+    }//GEN-LAST:event_jt_tablaUsuariosMouseClicked
 
     /**
      * @param args the command line arguments
@@ -253,10 +356,18 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JComboBox<String> jcb_tipoUsuario;
+    private javax.swing.JTable jt_tablaUsuarios;
     private javax.swing.JTree jt_usuarios;
+    private javax.swing.JLabel lbl_columnaSeleccionada;
+    private javax.swing.JLabel lbl_filaSeleccionada;
     private javax.swing.JLabel lbl_usuarioSeleccionado;
+    private javax.swing.JLabel lbl_valorSeleccionado;
     private javax.swing.JTextField txt_nombre;
     // End of variables declaration//GEN-END:variables
 }
