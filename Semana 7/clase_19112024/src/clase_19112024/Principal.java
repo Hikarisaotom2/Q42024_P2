@@ -4,6 +4,7 @@
  */
 package clase_19112024;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -38,6 +39,9 @@ public class Principal extends javax.swing.JFrame {
         
         modelo.addColumn("Nombre");
         modelo.addColumn("Tipo usuario");
+        
+         DefaultListModel modeloLista = new DefaultListModel();
+        jl_usuarios.setModel(modeloLista);
     }
     
     /*
@@ -93,6 +97,10 @@ public class Principal extends javax.swing.JFrame {
         lbl_columnaSeleccionada = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         lbl_valorSeleccionado = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jl_usuarios = new javax.swing.JList<>();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -150,6 +158,22 @@ public class Principal extends javax.swing.JFrame {
 
         lbl_valorSeleccionado.setText("jLabel7");
 
+        jButton2.setText("Eliminar de la tabla");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+
+        jScrollPane3.setViewportView(jl_usuarios);
+
+        jButton3.setText("Eliminar de lista");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -181,25 +205,35 @@ public class Principal extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 594, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(jLabel4)
-                        .addGap(34, 34, 34)
-                        .addComponent(lbl_filaSeleccionada)
-                        .addGap(111, 111, 111)
-                        .addComponent(jLabel5)
-                        .addGap(73, 73, 73)
-                        .addComponent(lbl_columnaSeleccionada))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton2)
+                                .addGap(98, 98, 98)
+                                .addComponent(jLabel6)
+                                .addGap(39, 39, 39)
+                                .addComponent(lbl_valorSeleccionado))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(jLabel4)
+                                .addGap(34, 34, 34)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(lbl_filaSeleccionada)
+                                        .addGap(111, 111, 111)
+                                        .addComponent(jLabel5)
+                                        .addGap(73, 73, 73)
+                                        .addComponent(lbl_columnaSeleccionada)))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(213, 213, 213)
-                        .addComponent(jLabel6)
-                        .addGap(39, 39, 39)
-                        .addComponent(lbl_valorSeleccionado)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 594, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(269, 269, 269)
+                .addComponent(jButton3)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,11 +268,16 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(lbl_filaSeleccionada)
                     .addComponent(lbl_columnaSeleccionada))
-                .addGap(43, 43, 43)
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(lbl_valorSeleccionado))
-                .addContainerGap(51, Short.MAX_VALUE))
+                    .addComponent(lbl_valorSeleccionado)
+                    .addComponent(jButton2))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton3)
+                .addContainerGap(7, Short.MAX_VALUE))
         );
 
         pack();
@@ -248,8 +287,11 @@ public class Principal extends javax.swing.JFrame {
       
         
         String nombre = txt_nombre.getText();
-          DefaultTreeModel modeloArbol = (DefaultTreeModel)jt_usuarios.getModel();
-      DefaultMutableTreeNode raiz = (DefaultMutableTreeNode)modeloArbol.getRoot();   
+       DefaultTreeModel modeloArbol = (DefaultTreeModel)jt_usuarios.getModel();
+       DefaultMutableTreeNode raiz = (DefaultMutableTreeNode)modeloArbol.getRoot();   
+   
+        DefaultListModel modeloLista = (DefaultListModel)jl_usuarios.getModel();
+        
       
         System.out.println("La raiz tiene "+ raiz.getChildCount() +"Hijos");
         if(jcb_tipoUsuario.getSelectedIndex() == 0){ //docente
@@ -263,7 +305,8 @@ public class Principal extends javax.swing.JFrame {
                 
            DefaultTableModel modeloTabla = (DefaultTableModel)jt_tablaUsuarios.getModel();
            modeloTabla.addRow(docente.getFila());
-           
+           modeloLista.addElement(docente);
+          
         }else{ //alumno
             Alumno alumno = new Alumno(nombre);
             DefaultMutableTreeNode nodoAlumnos = (DefaultMutableTreeNode)raiz.getChildAt(1);
@@ -273,6 +316,7 @@ public class Principal extends javax.swing.JFrame {
             
             DefaultTableModel modeloTable =(DefaultTableModel) jt_tablaUsuarios.getModel();
             modeloTable.addRow(new Object[]{alumno.getNombre(), "Alumno"});
+            modeloLista.addElement(alumno);
         }
         
         JOptionPane.showMessageDialog(null, "Usuario agregado exitosamente'");
@@ -316,6 +360,29 @@ public class Principal extends javax.swing.JFrame {
        }
     }//GEN-LAST:event_jt_tablaUsuariosMouseClicked
 
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        
+        int fila = jt_tablaUsuarios.getSelectedRow();
+        DefaultTableModel modelo = (DefaultTableModel) jt_tablaUsuarios.getModel();
+        modelo.removeRow(fila);
+        
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+        int seleccionado = jl_usuarios.getSelectedIndex();        
+        DefaultListModel modeloLista = (DefaultListModel)jl_usuarios.getModel();
+        Object objeto = modeloLista.getElementAt(seleccionado);
+        if(objeto instanceof Docente){
+            System.out.println("Se selecciono un docente de la lista");
+        }else if( objeto instanceof Alumno){
+            System.out.println("Se selecciono un alumno");
+        }
+        modeloLista.remove(seleccionado);
+        
+    }//GEN-LAST:event_jButton3MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -350,9 +417,12 @@ public class Principal extends javax.swing.JFrame {
             }
         });
     }
-
+    
+   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -361,7 +431,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JComboBox<String> jcb_tipoUsuario;
+    private javax.swing.JList<String> jl_usuarios;
     private javax.swing.JTable jt_tablaUsuarios;
     private javax.swing.JTree jt_usuarios;
     private javax.swing.JLabel lbl_columnaSeleccionada;
