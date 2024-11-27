@@ -29,10 +29,21 @@ public class Principal extends javax.swing.JFrame {
         jp_menuAcciones = new javax.swing.JPopupMenu();
         Limpiar = new javax.swing.JMenuItem();
         Guardar = new javax.swing.JMenuItem();
+        jd_mostrarOpciones = new javax.swing.JDialog();
+        btn_CambiarTexto = new javax.swing.JButton();
+        txt_nuevoTexto = new javax.swing.JTextField();
+        jd_etiqueta = new javax.swing.JDialog();
+        lbl_etiquetaDialog = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
+        btn_mostrarDialog = new javax.swing.JButton();
+        lbl_mensaje = new javax.swing.JLabel();
         jp_panelPopUp = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        txt_nombre = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txt_apellido = new javax.swing.JTextField();
+        lbl_resultados = new javax.swing.JLabel();
 
         Limpiar.setText("Limpiar");
         Limpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -50,17 +61,99 @@ public class Principal extends javax.swing.JFrame {
         });
         jp_menuAcciones.add(Guardar);
 
+        btn_CambiarTexto.setText("cambiar");
+        btn_CambiarTexto.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                btn_CambiarTextoFocusLost(evt);
+            }
+        });
+        btn_CambiarTexto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_CambiarTextoMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_mostrarOpcionesLayout = new javax.swing.GroupLayout(jd_mostrarOpciones.getContentPane());
+        jd_mostrarOpciones.getContentPane().setLayout(jd_mostrarOpcionesLayout);
+        jd_mostrarOpcionesLayout.setHorizontalGroup(
+            jd_mostrarOpcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_mostrarOpcionesLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txt_nuevoTexto, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jd_mostrarOpcionesLayout.createSequentialGroup()
+                .addGap(258, 258, 258)
+                .addComponent(btn_CambiarTexto)
+                .addContainerGap(305, Short.MAX_VALUE))
+        );
+        jd_mostrarOpcionesLayout.setVerticalGroup(
+            jd_mostrarOpcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_mostrarOpcionesLayout.createSequentialGroup()
+                .addContainerGap(80, Short.MAX_VALUE)
+                .addComponent(txt_nuevoTexto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addComponent(btn_CambiarTexto)
+                .addGap(126, 126, 126))
+        );
+
+        jd_etiqueta.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jd_etiquetaFocusLost(evt);
+            }
+        });
+
+        lbl_etiquetaDialog.setText("Hola");
+
+        javax.swing.GroupLayout jd_etiquetaLayout = new javax.swing.GroupLayout(jd_etiqueta.getContentPane());
+        jd_etiqueta.getContentPane().setLayout(jd_etiquetaLayout);
+        jd_etiquetaLayout.setHorizontalGroup(
+            jd_etiquetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_etiquetaLayout.createSequentialGroup()
+                .addContainerGap(71, Short.MAX_VALUE)
+                .addComponent(lbl_etiquetaDialog, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53))
+        );
+        jd_etiquetaLayout.setVerticalGroup(
+            jd_etiquetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_etiquetaLayout.createSequentialGroup()
+                .addGap(76, 76, 76)
+                .addComponent(lbl_etiquetaDialog, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(103, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        btn_mostrarDialog.setText("mostrar Dialog");
+        btn_mostrarDialog.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_mostrarDialogMouseClicked(evt);
+            }
+        });
+
+        lbl_mensaje.setText("jLabel3");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 675, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(236, 236, 236)
+                        .addComponent(btn_mostrarDialog, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(277, 277, 277)
+                        .addComponent(lbl_mensaje)))
+                .addContainerGap(264, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 383, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(85, 85, 85)
+                .addComponent(lbl_mensaje)
+                .addGap(62, 62, 62)
+                .addComponent(btn_mostrarDialog)
+                .addContainerGap(196, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Dialogs", jPanel1);
@@ -71,23 +164,49 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setText("Nombre");
+
+        jLabel2.setText("Apellido");
+
+        lbl_resultados.setText("jLabel3");
 
         javax.swing.GroupLayout jp_panelPopUpLayout = new javax.swing.GroupLayout(jp_panelPopUp);
         jp_panelPopUp.setLayout(jp_panelPopUpLayout);
         jp_panelPopUpLayout.setHorizontalGroup(
             jp_panelPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_panelPopUpLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jLabel1)
-                .addContainerGap(618, Short.MAX_VALUE))
+                .addGroup(jp_panelPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp_panelPopUpLayout.createSequentialGroup()
+                        .addGroup(jp_panelPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jp_panelPopUpLayout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addComponent(jLabel1))
+                            .addGroup(jp_panelPopUpLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel2)))
+                        .addGap(78, 78, 78)
+                        .addGroup(jp_panelPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txt_nombre)
+                            .addComponent(txt_apellido, javax.swing.GroupLayout.DEFAULT_SIZE, 493, Short.MAX_VALUE)))
+                    .addGroup(jp_panelPopUpLayout.createSequentialGroup()
+                        .addGap(238, 238, 238)
+                        .addComponent(lbl_resultados, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         jp_panelPopUpLayout.setVerticalGroup(
             jp_panelPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_panelPopUpLayout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(jLabel1)
-                .addContainerGap(314, Short.MAX_VALUE))
+                .addGap(49, 49, 49)
+                .addGroup(jp_panelPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txt_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(jp_panelPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(txt_apellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(55, 55, 55)
+                .addComponent(lbl_resultados)
+                .addContainerGap(185, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Pop Up Menu", jp_panelPopUp);
@@ -121,13 +240,43 @@ public class Principal extends javax.swing.JFrame {
 
     private void LimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimpiarActionPerformed
         // TODO add your handling code here:
-        System.out.println("Limpiando desde el pop up menu");
+      txt_nombre.setText("");
+      txt_apellido.setText("");
+      lbl_resultados.setText("");
     }//GEN-LAST:event_LimpiarActionPerformed
 
     private void GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarActionPerformed
         // TODO add your handling code here:
-        System.out.println("Guardando desde el pop up menu");
+       lbl_resultados.setText(txt_nombre.getText() +" "+txt_apellido.getText());
     }//GEN-LAST:event_GuardarActionPerformed
+
+    private void btn_mostrarDialogMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_mostrarDialogMouseClicked
+        // TODO add your handling code here:
+        jd_mostrarOpciones.setVisible(true);
+         this.setVisible(false);
+        jd_mostrarOpciones.pack();
+        jd_etiqueta.setVisible(true);
+        jd_etiqueta.pack();
+        txt_nuevoTexto.setText("Hola desde el jframe!");
+        
+        
+    }//GEN-LAST:event_btn_mostrarDialogMouseClicked
+
+    private void btn_CambiarTextoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_CambiarTextoMouseClicked
+        String nuevoTexto = txt_nuevoTexto.getText();
+        lbl_mensaje.setText(nuevoTexto);
+        lbl_etiquetaDialog.setText(nuevoTexto);
+    }//GEN-LAST:event_btn_CambiarTextoMouseClicked
+
+    private void btn_CambiarTextoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btn_CambiarTextoFocusLost
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_btn_CambiarTextoFocusLost
+
+    private void jd_etiquetaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jd_etiquetaFocusLost
+        // TODO add your handling code here:
+                this.setVisible(true);
+    }//GEN-LAST:event_jd_etiquetaFocusLost
 
     /**
      * @param args the command line arguments
@@ -167,10 +316,21 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Guardar;
     private javax.swing.JMenuItem Limpiar;
+    private javax.swing.JButton btn_CambiarTexto;
+    private javax.swing.JButton btn_mostrarDialog;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JDialog jd_etiqueta;
+    private javax.swing.JDialog jd_mostrarOpciones;
     private javax.swing.JPopupMenu jp_menuAcciones;
     private javax.swing.JPanel jp_panelPopUp;
+    private javax.swing.JLabel lbl_etiquetaDialog;
+    private javax.swing.JLabel lbl_mensaje;
+    private javax.swing.JLabel lbl_resultados;
+    private javax.swing.JTextField txt_apellido;
+    private javax.swing.JTextField txt_nombre;
+    private javax.swing.JTextField txt_nuevoTexto;
     // End of variables declaration//GEN-END:variables
 }
