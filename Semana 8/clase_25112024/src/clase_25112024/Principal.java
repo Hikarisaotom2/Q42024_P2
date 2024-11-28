@@ -4,6 +4,12 @@
  */
 package clase_25112024;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFileChooser;
+
 /**
  *
  * @author claudiacortes
@@ -44,6 +50,11 @@ public class Principal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txt_apellido = new javax.swing.JTextField();
         lbl_resultados = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        btn_abrirArchivo = new javax.swing.JButton();
+        btn_guardarArchivo = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txt_informacion = new javax.swing.JTextArea();
 
         Limpiar.setText("Limpiar");
         Limpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -211,6 +222,49 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Pop Up Menu", jp_panelPopUp);
 
+        btn_abrirArchivo.setText("Abrir");
+        btn_abrirArchivo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_abrirArchivoMouseClicked(evt);
+            }
+        });
+
+        btn_guardarArchivo.setText("Guardar");
+
+        txt_informacion.setColumns(20);
+        txt_informacion.setRows(5);
+        jScrollPane1.setViewportView(txt_informacion);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(101, 101, 101)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(btn_abrirArchivo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_guardarArchivo)
+                        .addGap(82, 82, 82))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(91, Short.MAX_VALUE))))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_guardarArchivo)
+                    .addComponent(btn_abrirArchivo))
+                .addGap(54, 54, 54))
+        );
+
+        jTabbedPane1.addTab("Archivos Texto", jPanel2);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -278,6 +332,48 @@ public class Principal extends javax.swing.JFrame {
                 this.setVisible(true);
     }//GEN-LAST:event_jd_etiquetaFocusLost
 
+    private void btn_abrirArchivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_abrirArchivoMouseClicked
+        // TODO add your handling code here:
+        
+        JFileChooser filechooser = new JFileChooser();
+        int estado = filechooser.showOpenDialog(this);
+        if(estado == JFileChooser.APPROVE_OPTION){
+            // el usuario selecciono un archivo. 
+            File archivoSeleccionado = filechooser.getSelectedFile();
+            System.out.println("Nombre del archivo "+ archivoSeleccionado.getName());
+            System.out.println("Ruta: "+ archivoSeleccionado.getAbsolutePath());
+
+            try {
+                  System.out.println("Ruta relativa : "+ archivoSeleccionado.getCanonicalPath());
+                System.out.println("Ruta relativa : "+ archivoSeleccionado.getPath());
+            } catch (IOException ex) {
+                System.out.println("Algo salio mal al ver las rutas");
+            }
+            
+      
+            
+            /*
+            absoluta:
+            c://juan/desktop/progra2/ejemeplo.txt
+            c://Blanca/desktop/P2/ejemplo.txt
+            
+            
+            relativa: 
+             
+            /desktop/ejemplo.txt
+            /desktop/ejemplo.txt
+            
+         
+            
+            
+            */
+          
+        }else{
+            System.out.println("Ocurrio un error! ");
+        }
+        
+    }//GEN-LAST:event_btn_abrirArchivoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -317,10 +413,14 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem Guardar;
     private javax.swing.JMenuItem Limpiar;
     private javax.swing.JButton btn_CambiarTexto;
+    private javax.swing.JButton btn_abrirArchivo;
+    private javax.swing.JButton btn_guardarArchivo;
     private javax.swing.JButton btn_mostrarDialog;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JDialog jd_etiqueta;
     private javax.swing.JDialog jd_mostrarOpciones;
@@ -330,6 +430,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_mensaje;
     private javax.swing.JLabel lbl_resultados;
     private javax.swing.JTextField txt_apellido;
+    private javax.swing.JTextArea txt_informacion;
     private javax.swing.JTextField txt_nombre;
     private javax.swing.JTextField txt_nuevoTexto;
     // End of variables declaration//GEN-END:variables
