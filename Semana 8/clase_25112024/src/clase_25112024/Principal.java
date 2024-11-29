@@ -4,7 +4,11 @@
  */
 package clase_25112024;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -230,6 +234,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         btn_guardarArchivo.setText("Guardar");
+        btn_guardarArchivo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_guardarArchivoMouseClicked(evt);
+            }
+        });
 
         txt_informacion.setColumns(20);
         txt_informacion.setRows(5);
@@ -344,35 +353,64 @@ public class Principal extends javax.swing.JFrame {
             System.out.println("Ruta: "+ archivoSeleccionado.getAbsolutePath());
 
             try {
-                  System.out.println("Ruta relativa : "+ archivoSeleccionado.getCanonicalPath());
-                System.out.println("Ruta relativa : "+ archivoSeleccionado.getPath());
+            // lectura del contenido del archivo
+             // buffer 
+             BufferedReader br = new BufferedReader(new FileReader(archivoSeleccionado));
+             String linea ="";
+             txt_informacion.setText("");
+             do {
+                 linea = br.readLine();
+                 /*
+                 Delimitador: 1
+                Primer: nombre 
+                Segundo: appeliido
+                Tercer: id
+                 */
+                if(linea!=null){
+                 String textoViejo = txt_informacion.getText();
+                 txt_informacion.setText(textoViejo+"\n"+linea);
+                 String [] valores = linea.split(",");
+                    System.out.println("Nombre: "+valores[0]);
+                    System.out.println("Apellido: "+valores[1]);
+                    System.out.println("ID: "+valores[2]);
+                }else{
+                    break;
+                }
+             }while(true);
+             // cerrar el buffered reader
+               br.close();
             } catch (IOException ex) {
-                System.out.println("Algo salio mal al ver las rutas");
+                System.out.println("Algo salio mal al interactuar con el archivo");
             }
-            
-      
-            
-            /*
-            absoluta:
-            c://juan/desktop/progra2/ejemeplo.txt
-            c://Blanca/desktop/P2/ejemplo.txt
-            
-            
-            relativa: 
-             
-            /desktop/ejemplo.txt
-            /desktop/ejemplo.txt
-            
-         
-            
-            
-            */
-          
         }else{
             System.out.println("Ocurrio un error! ");
         }
         
     }//GEN-LAST:event_btn_abrirArchivoMouseClicked
+
+    private void btn_guardarArchivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_guardarArchivoMouseClicked
+   
+        JFileChooser filechooser = new JFileChooser();
+        int estado = filechooser.showSaveDialog(this);
+        if(estado== JFileChooser.APPROVE_OPTION){
+            File seleccionado = filechooser.getSelectedFile();
+            try{
+                                                        // el . booleano nos ayuda a controlar si queremos hacer append o no 
+                                                        /*
+                                                        
+                                                        true->  append/agregar 
+                                                         false -> override/ sobreescribir
+                                                        */
+                BufferedWriter br = new BufferedWriter(new FileWriter(seleccionado,true));
+                String info = txt_informacion.getText();
+               br.write(info);
+               br.close();
+                System.out.println("Archivo guardado!");
+            }catch(IOException e){
+                System.out.println("Algo salio mal");
+            }
+        }
+    }//GEN-LAST:event_btn_guardarArchivoMouseClicked
 
     /**
      * @param args the command line arguments
